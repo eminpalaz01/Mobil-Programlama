@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">My First App</string>
+    <string name="bos_deger_girilemez">Girilen değerler boş olamaz.</string>
+    <string name="ad_ve_soyadınızı_kontrol_ediniz">Adınızı ve soyadınızı boş bırakılamaz tekrar kontrol ediniz.</string>
+</resources>
