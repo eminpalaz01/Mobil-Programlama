@@ -1,124 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Burası kullanılmadı Kendim çalışırken kullanmıştım. -->
-
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:textAlignment="textStart"
-    tools:context=".MainActivity">
+    android:background="@color/mybg_color">
 
-    <Button
-        android:id="@+id/btnBol"
-        android:layout_width="55dp"
-        android:layout_height="50dp"
-        android:layout_marginEnd="32dp"
-        android:onClick="btnHesaplaClick"
-        android:text="/"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
+
+    <EditText
+        android:id="@+id/et"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="30dp"
+        android:ems="10"
+        android:inputType="textShortMessage"
+        android:outlineSpotShadowColor="@color/black"
+        android:textCursorDrawable="@color/black"
+        app:backgroundTint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/btnCarp"
-        android:layout_width="55dp"
-        android:layout_height="50dp"
-        android:onClick="btnHesaplaClick"
-        android:text="*"
-        android:visibility="invisible"
-        app:layout_constraintBaseline_toBaselineOf="@+id/btnBol"
-        app:layout_constraintEnd_toStartOf="@+id/btnBol"
-        app:layout_constraintHorizontal_bias="0.754"
-        app:layout_constraintStart_toEndOf="@+id/btnTopla" />
-
-    <Button
-        android:id="@+id/btnFark"
-        android:layout_width="55dp"
-        android:layout_height="50dp"
-        android:onClick="btnHesaplaClick"
-        android:text="-"
-        android:visibility="invisible"
-        app:layout_constraintBaseline_toBaselineOf="@+id/btnCarp"
-        app:layout_constraintEnd_toStartOf="@+id/btnCarp"
-        app:layout_constraintStart_toEndOf="@+id/btnTopla" />
-
     <TextView
-        android:id="@+id/textMessage"
+        android:id="@+id/t"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:alpha="0.8"
-        android:text="Vize Ödevi"
-        android:textAlignment="center"
-        android:textSize="25sp"
-        android:textStyle="bold|italic"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text=" Username : "
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/et"
+        app:layout_constraintEnd_toStartOf="@+id/et"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/editText1"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_marginTop="24dp"
-        android:ems="10"
-        android:hint="Adı giriniz..."
-        android:inputType="textPersonName"
-        android:textAlignment="textStart"
-        app:layout_constraintEnd_toEndOf="@+id/textMessage"
-        app:layout_constraintStart_toStartOf="@+id/textMessage"
-        app:layout_constraintTop_toBottomOf="@+id/textMessage" />
-
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:hint="Soyadı giriniz..."
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/editText1"
-        app:layout_constraintStart_toStartOf="@+id/editText1"
-        app:layout_constraintTop_toBottomOf="@+id/editText1" />
-
-    <Button
-        android:id="@+id/btnTopla"
-        android:layout_width="55dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="32dp"
-        android:onClick="btnHesaplaClick"
-        android:text="+"
-        android:visibility="invisible"
-        app:layout_constraintBaseline_toBaselineOf="@+id/btnFark"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/et" />
 
     <TextView
-        android:id="@+id/textSonuc"
-        android:layout_width="365dp"
-        android:layout_height="30dp"
-        android:text="SONUÇ :"
-        android:textAlignment="textStart"
-        android:textSize="24sp"
-        android:visibility="invisible"
+        android:id="@+id/t1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" Password : "
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/et1"
+        app:layout_constraintEnd_toStartOf="@+id/et1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/et1" />
+
+    <EditText
+        android:id="@+id/et1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="30dp"
+        android:ems="10"
+        android:inputType="textPersonName|textPassword"
+        android:outlineSpotShadowColor="@color/black"
+        android:textCursorDrawable="@color/black"
+        app:backgroundTint="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et" />
+
+    <Button
+        android:id="@+id/b"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/my_color"
+        android:text="LOGIN"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnTopla"
-        app:layout_constraintVertical_bias="0.495" />
-
-    <Button
-        android:id="@+id/btnHello"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Send"
-        app:layout_constraintBottom_toTopOf="@+id/btnFark"
-        app:layout_constraintEnd_toEndOf="@+id/editText2"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="@+id/editText2"
-        app:layout_constraintTop_toBottomOf="@+id/editText2"
-        app:layout_constraintVertical_bias="0.512"
-        android:onClick="btnHelloClick"/>
-
+        app:layout_constraintTop_toBottomOf="@+id/et1" />
 </androidx.constraintlayout.widget.ConstraintLayout>

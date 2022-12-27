@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mybg_color">
+
+    <Button
+        android:id="@+id/btnDeleteNote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@color/my_color"
+        android:onClick="btnHelloClick"
+        android:text="Delete"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/inputDeleteNote"
+        app:layout_constraintStart_toStartOf="@+id/inputDeleteNote"
+        app:layout_constraintTop_toBottomOf="@+id/inputDeleteNote" />
+
+    <TextView
+        android:id="@+id/baslik_delete_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Silmek istediğiniz notun numarasını giriniz"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/inputDeleteNote"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.542"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:textCursorDrawable="@color/black"
+        app:backgroundTint="@color/black"
+        android:id="@+id/inputDeleteNote"
+        android:layout_width="403dp"
+        android:layout_height="52dp"
+        android:ems="10"
+        android:hint="Silmek istediğiniz notun numarasını yazınız..."
+        android:inputType="number|textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/baslik_delete_id"
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toStartOf="@+id/baslik_delete_id"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.499" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

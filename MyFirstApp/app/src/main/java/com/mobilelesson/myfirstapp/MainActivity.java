@@ -1,11 +1,18 @@
 package com.mobilelesson.myfirstapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Context;
+import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,12 +22,13 @@ import android.widget.Toast;
 
 import com.google.android.material.chip.ChipGroup;
 
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
-    private LinearLayout ll;
+    private ConstraintLayout ll;
 
-    private TextView t;
-    private TextView t1;
+    private TextView t,t1;
     private EditText et;
     private EditText et1;
     private Button b;
@@ -29,65 +37,51 @@ public class MainActivity extends AppCompatActivity {
     private Toast toastMessage;
     private Context context = this;
 
-    private String ad, soyad;
+    private String ad, sifre;
+    private String userName,userPassword;
+
+    private SQLiteDatabase database;
 
 
-// Bu projede activity_main.xml dosyası kullanılmadan sadece java ile nesneler ile layout oluşturuldu.
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ll=new LinearLayout(this);
-        et=new EditText(this);
-        et1=new EditText(this);
-        t1=new TextView(this);
-        t=new TextView(this);
-        b=new Button(this);
+        setContentView(R.layout.activity_main);
+
+        ll = findViewById(R.id.main_activity_layout);
+        et = findViewById(R.id.et);
+        et1 =findViewById(R.id.et1);
+        t1 = findViewById(R.id.t1);
+        t =  findViewById(R.id.t);
+
+        b =  findViewById(R.id.b);
 
 
-        LinearLayout.LayoutParams boyutlar=new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.MATCH_PARENT);
-        ll.setLayoutParams(boyutlar);
 
 
-        LinearLayout.LayoutParams boyut=new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT);
-        et.setLayoutParams(boyut);
-        et1.setLayoutParams(boyut);
-        t1.setLayoutParams(boyut);
-        t.setLayoutParams(boyut);
-        b.setLayoutParams(boyut);
-
-
-        ll.setOrientation(LinearLayout.VERTICAL);
-
-
-        t.setText(" AD:");
-        t1.setText(" SOYAD:");
-        b.setText("Click");
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                ad = et.getText().toString();
-               soyad = et1.getText().toString();
+               sifre = et1.getText().toString();
+               userName = getText(R.string.user_name).toString();
+               userPassword = getText(R.string.user_password).toString();
 
-                if (!TextUtils.isEmpty(ad) && !TextUtils.isEmpty(soyad)){
-                    Toast.makeText(context,"Hoşgeldiniz " + ad +" "+soyad+".",Toast.LENGTH_LONG).show();
 
-                }else{
-                    Toast.makeText(context,R.string.ad_ve_soyadınızı_kontrol_ediniz,Toast.LENGTH_LONG).show();
-                }
+               // equals ile kontrol yapıldı
+                   if((ad.equals(userName)) && (sifre.equals(userPassword))) {
+                      Toast.makeText(context,"Hoşgeldiniz " + ad +".",Toast.LENGTH_LONG).show();
+
+                      Intent intent = new Intent(getBaseContext(), ViewJobsActivity.class);
+                      startActivity(intent);
+                   }else{
+                      Toast.makeText(context,R.string.ad_ve_sifrenizi_kontrol_ediniz,Toast.LENGTH_LONG).show();
+                   }
             }
         });
-
-        ll.addView(t);
-        ll.addView(et);
-        ll.addView(t1);
-        ll.addView(et1);
-        ll.addView(b);
-
-
-
-        setContentView(ll);
 
     }
 

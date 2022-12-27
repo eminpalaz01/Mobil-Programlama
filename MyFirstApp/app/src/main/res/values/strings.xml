@@ -1,5 +1,7 @@
 <resources>
-    <string name="app_name">My First App</string>
+    <string name="app_name">To Do List</string>
+    <string name="user_name">admin</string>
+    <string name="user_password">123</string>
     <string name="bos_deger_girilemez">Girilen değerler boş olamaz.</string>
-    <string name="ad_ve_soyadınızı_kontrol_ediniz">Adınızı ve soyadınızı boş bırakılamaz tekrar kontrol ediniz.</string>
+    <string name="ad_ve_sifrenizi_kontrol_ediniz">Adınızı ve şifrenizi kontrol ediniz.</string>
 </resources>
